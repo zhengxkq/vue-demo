@@ -1,5 +1,8 @@
-var config = require('../config')
-if(!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.NODE_ENV)
-var path = require('path')
-var express = require('express')
-var webpack = require('webpack')
+require('eventsource-polyfill')
+var hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true')
+
+hotClient.subscribe(function(event){
+    if(event.action === 'reload'){
+        window.location.reload()
+    }
+})
