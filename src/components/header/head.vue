@@ -61,7 +61,7 @@ export default {
     .head_login{
         right: 0.55rem;
         @include sc(0.65rem, #fff);
-        @include Ct;
+        @include ct;
         .login_span{
             color: #fff;
         }
