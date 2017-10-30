@@ -45,7 +45,19 @@
 import headTop from '../../components/header/head'
 import {cityGuess, hotcity, groupcity} from '../../service/getData'
 export default {
-    
+    data(){
+        return {
+            guessCity: '',//当前城市
+            guessCityid:'',//当前城市id
+            hotcity:[],//热门城市列表
+            groupcity:{},//所有城市列表
+        }
+    },
+    mounted(){
+        cityGuess().then(res =>{
+            console.log(res)
+        })
+    },
     components:{
         headTop
     },
