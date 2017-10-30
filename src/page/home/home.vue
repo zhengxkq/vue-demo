@@ -55,11 +55,30 @@ export default {
     },
     mounted(){
         cityGuess().then(res =>{
-            console.log(res)
+            this.guessCity = res.name;
+            this.guessCityid = res.id;
+        })
+
+        hotcity().then(res => {
+            this.hotcity = res;
+        })
+
+        groupcity().then(res => {
+            this.groupcity = res;
         })
     },
     components:{
         headTop
+    },
+    computed:{
+        sortgroupcity(){
+            let sortobj= {};
+            for(let i = 65;i<=90;i++){
+                if(this.groupcity[String.fromCharCode(i)]){
+                    sortobj[String.fromCharCode(i)] = this.groupcity[String.fromCharCode(i)]
+                }
+            }
+        }
     },
     methods:{
         reload(){
@@ -68,4 +87,16 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+    @import '../../style/mixin';
+    .head_logo{
+        left: 0.4rem;
+        font-weight: 400;
+        @include sc(0.7rem,#fff);
+        @include wh(2.4rem,0.7rem);
+        @include cl;
+    }
+</style>
+
 
