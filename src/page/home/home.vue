@@ -146,6 +146,30 @@ export default {
             @include wh(25%,1.75rem);
             @include font(0.6rem,1.75rem);
         }
+        li:nth-of-type(4n){
+            border-right: none;
+        }
+    }
+    .city_title{
+        color:#666;
+        font-weight: 400;
+        text-indent: 0.45rem;
+        border-top: 2px solid $bc;
+        border-bottom: 1px solid $bc;
+        @include font(0.55rem, 1.45rem, "Helvetica Neue");
+        span{
+            @include sc(0.475rem, #999);
+        }
+    }
+    .letter_classify_li{
+        margin-bottom: 0.4rem;
+        background-color: #fff;
+        border-bottom: 1px solid $bc;
+        .groupcity_name_container{
+            li{
+                color: #666;
+            }
+        }
     }
 </style>
 
