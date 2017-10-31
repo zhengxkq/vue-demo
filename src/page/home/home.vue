@@ -97,6 +97,56 @@ export default {
         @include wh(2.4rem,0.7rem);
         @include cl;
     }
+    .city_nav{
+        padding-top: 2.25rem;
+        border-top: 1px solid $bc;
+        background-color: #fff;
+        margin-bottom: 0.4rem;
+        .city_tip{
+            @include fj;
+            line-height: 1.45rem;
+            padding: 0 0.45rem;
+            span:nth-of-type(1){
+                @include sc(0.55rem, #666);
+            }
+            span:nth-of-type(2){
+                font-weight: 900;
+                @include sc(0.45rem, #9f9f9f);
+            }
+        }
+
+        .guess_city{
+            @include fj;
+            align-items: center;
+            height: 1.8rem;
+            padding: 0 0.45rem;
+            border-top: 1px solid $bc;
+            border-bottom: 2px solid $bc;
+            @include font(0.75rem, 1.8rem);
+            span:nth-of-type(1){
+                color:$blue;
+            }
+            .arrow_right{
+                @include wh(.6rem, .6rem);
+                fill: #999;
+            }
+        }
+    }
+    #hot_city_container{
+        background-color: #fff;
+        margin-bottom: 0.4rem;
+    }
+    .citylistul{
+        li{
+            float: left;
+            text-align: center;
+            color:$blue;
+            border-bottom: 0.025rem solid $bc;
+            border-right: 0.025rem solid $bc;
+            @include wh(25%,1.75rem);
+            @include font(0.6rem,1.75rem);
+        }
+    }
 </style>
 
 
