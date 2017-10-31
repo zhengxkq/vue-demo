@@ -15,14 +15,14 @@
              </svg>
           </router-link>
       </nav>
-      <seciton id="hot_city_container">
+      <section id="hot_city_container">
           <h4 class="city_title">热门城市</h4>
           <ul class="citylisstul clear">
               <router-link tag="li" v-for="item in hotcity" :to="'/city/' + item.id" :key="item.id">
                 {{item.name}}
               </router-link>
           </ul>
-      </seciton>
+      </section>
       <section class="group_city_container">
           <ul class="letter_classify">
               <li v-for="(value, key, index) in sortgroupcity" :key="key" class="letter_classify_li">
