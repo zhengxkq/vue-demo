@@ -73,7 +73,6 @@ export default {
   computed: {
     sortgroupcity() {
       let sortobj = {};
-      console.log(this.groupcity);
 
       for (let i = 65; i <= 90; i++) {
         if (this.groupcity[String.fromCharCode(i)]) {
