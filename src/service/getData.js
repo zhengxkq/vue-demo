@@ -6,7 +6,7 @@ import { getStore } from '../config/mUtils'
  */
 
 export const cityGuess = () => fetch('/v1/cities', {
-    type: 'guess'
+        type: 'guess'
 });
 
 /**
@@ -14,7 +14,7 @@ export const cityGuess = () => fetch('/v1/cities', {
  */
 
 export const hotcity = () => fetch('/v1/cities', {
-    type: 'hot'
+        type: 'hot'
 });
 
 /**
@@ -22,7 +22,7 @@ export const hotcity = () => fetch('/v1/cities', {
  */
 
 export const groupcity = () => fetch('/v1/cities', {
-    type: 'group'
+        type: 'group'
 });
 
 /**
@@ -30,3 +30,19 @@ export const groupcity = () => fetch('/v1/cities', {
  */
 
 export const getUser = () => fetch('/v1/user', { user_id: getStore('user_id') });
+
+/**
+ * 获取当前所在城市
+ */
+
+export const currentcity = number => fetch('/v1/cities/' + number);
+
+/**
+ * 获取搜索地址
+ */
+
+ export const searchplace = (cityid, value) => fetch('/v1/pois',{
+     type:'search',
+     city_id:cityid,
+     keyword:value
+ })
