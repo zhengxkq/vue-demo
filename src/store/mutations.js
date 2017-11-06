@@ -1,7 +1,9 @@
 import {
     RECORD_USERINFO,
     GET_USERINFO,
-    SAVE_ADDRESS
+    SAVE_ADDRESS,
+    SAVE_GEOHASH,
+    RECORD_ADDRESS
 } from './mutation-types'
 
 import {setStore, getStore} from '../config/mUtils'
@@ -26,5 +28,15 @@ export default {
         }else{
             state.userInfo = null;
         }
+    },
+    [SAVE_GEOHASH](state, geohash){
+        state.geohash = geohash;
+    },
+    [RECORD_ADDRESS](state, {
+        latitude,
+        longitude
+    }){
+        state.latitude = latitude;
+        state.longitude = longitude;
     }
 }
