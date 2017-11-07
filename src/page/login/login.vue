@@ -13,7 +13,7 @@
     </form>
     <form class="loginForm" v-else>
       <setion class="input_container">
-        <input type="text" placeholder="账号" v-model=''>
+        <input type="text" placeholder="账号">
       </setion>
       <setion class="input_container">
         <input type="password" v-if="!showPassword" placeholder="密码" v-model="passWord">
