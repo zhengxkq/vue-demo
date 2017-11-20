@@ -88,7 +88,7 @@ export default {
     mounted(){
         this.initData();
     },
-    comments: {
+    components: {
         loading,
         ratingStar,
     }
