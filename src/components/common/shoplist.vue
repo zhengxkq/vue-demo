@@ -100,7 +100,51 @@ export default {
         ]),
     },
     methods:{
-        
+        async initData(){
+            let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
+            this.shopListArr = [...res];
+            if(res.length < 20){
+                this.touchend = true;
+            }
+            this.hideLoading();
+            showBack(status => {
+                this.showBackStatus = status;
+            })
+        },
+
+        async loaderMore(){
+            if(this.touchend){
+                return
+            }
+            if(this.preventRepeatRequest){
+                return
+            }
+            this.showLoading = true;
+            this.preventRepeatRequest = true;
+
+            this.offset += 20;
+            let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
+            this.shopListArr = [...this.shopListArr, ...res];
+            if(res.length < 20){
+                this.touchend = true;
+                return
+            }
+            this.preventRepeatRequest = false;
+        },
+        //返回顶部
+        backTop(){
+            animate(document.body, {scrollTop: '0'}, 400, 'ease-out');
+        },
+        async listenPropChange(){
+            this.showLoading = true;
+            this.offset = 0;
+            let res = await shopList(this.latitude, this.longitude, this.offset, '', this.restaurantCategoryId, this.sortByType, this.deliveryMode, this.supportIds);
+            this.hideLoading();
+            this.shopListArr =[...res];
+        },
+        hideLoading(){
+            this.showLoading = false;
+        }
     }
 }
 </script>
