@@ -18,7 +18,7 @@ export const removeStore = name => {
 
 export const getStyle = (element, attr, NumberMode = 'int') => {
     let target;
-    if(arrr === 'scrollTop'){
+    if(attr === 'scrollTop'){
         target = element.scrollTop;
     }else if(element.currentStyle){
         target = element.currentStyle[attr];

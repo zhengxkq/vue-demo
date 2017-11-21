@@ -91,6 +91,16 @@ export default {
     components: {
         loading,
         ratingStar,
+    },
+    props:['restaurantCategoryId', 'restaurantCategoryIds', 'sortByType', 'deliveryMode', 'supportIds', 'confirmSelect', 'geohash'],
+    mixins:[loadMore, getImgPath],
+    computed:{
+        ...mapState([
+            'latitude','longitude'
+        ]),
+    },
+    methods:{
+        
     }
 }
 </script>
