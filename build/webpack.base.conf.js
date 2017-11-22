@@ -44,7 +44,7 @@ module.exports = {
             test:/\.json$/,
             loader:'json'
         },{
-            test:/\.(png|jpe?g|gif|svg)(\?.*)$/,
+            test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
             loader:'url',
             query:{
                 limit:10000,
