@@ -67,7 +67,7 @@ export const currentcity = number => fetch('/v1/cities/' + number);
     * 获取msite商铺列表
     */
 
-    export const shopList = (latitude, longitude, offset, reataurant_category_id = '', restaurant_category_ids = '', order_by = '', delivery_mode = '', support_ids = []) => {
+    export const shopList = (latitude, longitude, offset, restaurant_category_id = '', restaurant_category_ids = '', order_by = '', delivery_mode = '', support_ids = []) => {
             let supportStr = '';
             support_ids.forEach(item => {
                     if(item.status){

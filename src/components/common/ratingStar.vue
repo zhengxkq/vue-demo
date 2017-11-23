@@ -7,7 +7,7 @@
         </section>
         <div :style="'width' + rating * 2 / 5 + 'rem'" class="star_overflow">
             <section class="star_container">
-                <svg class="orange_fill" class="orange_fill" v-for="num in 5" :key="num">
+                <svg class="orange_fill" v-for="num in 5" :key="num">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use>
                 </svg>
             </section>

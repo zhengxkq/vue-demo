@@ -109,6 +109,7 @@ export default {
             this.hideLoading();
             showBack(status => {
                 this.showBackStatus = status;
+                console.log(this.showBackStatus)
             })
         },
 

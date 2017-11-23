@@ -24,7 +24,7 @@ export const loadMore = {
                     heightEl = el;
                 }
 
-                el.addEventLstener('touchstart', () => {
+                el.addEventListener('touchstart', () => {
                     height = heightEl.clientHeight;
                     if(scrollType == 2){
                         height = height;
@@ -34,11 +34,11 @@ export const loadMore = {
                     marginBottom = getStyle(el, 'marginBottom');
                 }, false)
 
-                el.addEventLstener('touchmove', () => {
+                el.addEventListener('touchmove', () => {
                     loadMore;
                 }, false)
 
-                el.addEventLstener('touchend', () => {
+                el.addEventListener('touchend', () => {
                     oldScrollTop = scrollEl.scrollTop;
                     moveEnd();
                 }, false)

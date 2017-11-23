@@ -1,7 +1,7 @@
 
 let baseUrl = '';
 let routerMode = 'history';
-let imgBaseUrl = 'http://images.cangdu.org/';
+let imgBaseUrl = 'http://fuss10.elemecdn.com/';
 
 if(process.env.NODE_ENV === 'development'){
 
